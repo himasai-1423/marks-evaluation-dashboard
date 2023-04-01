@@ -20,17 +20,18 @@ const Header = () => {
       textAlign: "center",
       margin: "5px",
       padding: "15px",
+      marginBottom: "0px",
     },
 
     button: {
       fontFamily: "Montserrat",
-      fontWeight: "400",
+      fontWeight: "800",
       display: "inline-block",
       alignItems: "center",
       width: "45%",
       backgroundColor: "transparent",
-      marginTop: "5px",
-      padding: "14px 28px",
+      marginTop: "10px",
+      padding: "10px 20px",
       cursor: "pointer",
       textAlign: "center",
       color: "#39CC3e",
@@ -48,19 +49,23 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <Container>
-      <Typography className={classes.heading} variant="h3">
-        Marks Evaluation Dashboard
-      </Typography>
-      <Divider variant="middle" style={{ alignContent: "center" }} />
-      <Link to="/">
-        <Button className={classes.button}>View Students</Button>
-      </Link>
-      &nbsp;
-      <Link to="/mentor/:id">
-        <Button className={classes.button}>Mentor Page</Button>
-      </Link>
-    </Container>
+    <div>
+      <Container>
+        <Typography className={classes.heading} variant="h3">
+          Marks Evaluation Dashboard
+        </Typography>
+      </Container>
+      <Divider variant="middle" />
+      <Container>
+        <Link to="/">
+          <Button className={classes.button}>View Students</Button>
+        </Link>
+        &nbsp; &nbsp;
+        <Link to="/mentor/:id">
+          <Button className={classes.button}>Mentor Page</Button>
+        </Link>
+      </Container>
+    </div>
   );
 };
 
