@@ -68,6 +68,10 @@ const useStyles = makeStyles({
       backgroundColor: "red",
       color: "white",
     },
+
+    whole: {
+      marginTop: "30px",
+    },
   },
 });
 
@@ -78,7 +82,7 @@ const removeStudent = () => {};
 const MentorView = () => {
   const classes = useStyles();
   return (
-    <Container>
+    <Container className={classes.whole}>
       <Card className={classes.root}>
         <CardContent>
           <PersonIcon style={{ color: "#22c1d6" }} />
