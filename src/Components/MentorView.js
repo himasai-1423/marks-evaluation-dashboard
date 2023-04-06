@@ -81,6 +81,9 @@ const removeStudent = () => {};
 
 const MentorView = () => {
   const classes = useStyles();
+
+  const findMentors = () => {};
+
   return (
     <Container className={classes.whole}>
       <Card className={classes.root}>
