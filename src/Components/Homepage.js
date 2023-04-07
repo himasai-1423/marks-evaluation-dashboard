@@ -8,8 +8,23 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import React from "react";
-
+import { useEffect } from "react";
+import { db } from "../firebase";
+import { collection, getDocs } from "@firebase/firestore";
+import { useState } from "react";
 const Homepage = () => {
+  const [student, setStudent] = useState([]);
+
+  useEffect(() => {
+    // console.log(studentRef1);
+    const querySnapshot = getDocs(collection(db, "Student"));
+    querySnapshot.then((querySnapshot) => {
+      const data = querySnapshot.docs.map((doc) => doc.data());
+      console.log(data);
+      setStudent(data);
+    });
+  }, []);
+
   const useStyles = makeStyles({
     table: {
       fontFamily: "Montserrat",
@@ -37,34 +52,6 @@ const Homepage = () => {
     },
   });
 
-  function createData(
-    StudentName,
-    mentorAssigned,
-    Idea,
-    Method,
-    solution,
-    TechUsed,
-    Total
-  ) {
-    return {
-      StudentName,
-      mentorAssigned,
-      Idea,
-      Method,
-      solution,
-      TechUsed,
-      Total,
-    };
-  }
-
-  const rows = [
-    createData("a", "False", 30, 20, 20, 20, 100),
-    createData("b", "False", 30, 20, 20, 20, 100),
-    createData("c", "False", 30, 20, 20, 20, 100),
-    createData("d", "False", 30, 20, 20, 20, 100),
-    createData("e", "False", 30, 20, 20, 20, 100),
-    createData("f", "False", 30, 20, 20, 20, 100),
-  ];
   const classes = useStyles();
 
   return (
@@ -111,17 +98,19 @@ const Homepage = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
-              <TableRow key={row.StudentName} className={classes.row}>
+            {student.map((row) => (
+              <TableRow key={row.Name} className={classes.row}>
                 <TableCell component="th" scope="row" align="center">
-                  {row.StudentName}
+                  {row.Name}
                 </TableCell>
-                <TableCell align="right">{row.mentorAssigned}</TableCell>
+                <TableCell align="right">{row.mentorA}</TableCell>
                 <TableCell align="right">{row.Idea}</TableCell>
                 <TableCell align="right">{row.Method}</TableCell>
-                <TableCell align="right">{row.solution}</TableCell>
-                <TableCell align="right">{row.TechUsed}</TableCell>
-                <TableCell align="right">{row.Total}</TableCell>
+                <TableCell align="right">{row.Solution}</TableCell>
+                <TableCell align="right">{row.Languages}</TableCell>
+                <TableCell align="right">
+                  {row.Idea + row.Method + row.Solution + row.Languages}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>

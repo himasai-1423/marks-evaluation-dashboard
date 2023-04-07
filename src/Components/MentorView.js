@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import PersonIcon from "@material-ui/icons/Person";
+import { useState } from "react";
 
 const useStyles = makeStyles({
   root: {
@@ -75,14 +76,15 @@ const useStyles = makeStyles({
   },
 });
 
-const addStudent = () => {};
-
-const removeStudent = () => {};
-
 const MentorView = () => {
   const classes = useStyles();
 
-  const findMentors = () => {};
+  var [count1, setCount1] = useState(3);
+  var [count2, setCount2] = useState(2);
+  var [count3, setCount3] = useState(4);
+  var [count4, setCount4] = useState(1);
+  var [count5, setCount5] = useState(5);
+  var [count6, setCount6] = useState(6);
 
   return (
     <Container className={classes.whole}>
@@ -102,14 +104,30 @@ const MentorView = () => {
             Students Count:
           </Typography>
           <Typography variant="body2" component="p">
-            3
+            {count1}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" className={classes.green} onClick={addStudent}>
+          <Button
+            size="small"
+            className={classes.green}
+            onClick={() => {
+              count1 < 4
+                ? setCount1(++count1)
+                : alert("Can't add more Students");
+            }}
+          >
             Add
           </Button>
-          <Button size="small" className={classes.red} onClick={removeStudent}>
+          <Button
+            size="small"
+            className={classes.red}
+            onClick={() => {
+              count1 > 3
+                ? setCount1(--count1)
+                : alert("Can't remove more Students");
+            }}
+          >
             Remove
           </Button>
         </CardActions>
@@ -131,14 +149,30 @@ const MentorView = () => {
             Students Count:
           </Typography>
           <Typography variant="body2" component="p">
-            2
+            {count2}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" className={classes.green} onClick={addStudent}>
+          <Button
+            size="small"
+            className={classes.green}
+            onClick={() => {
+              count2 < 4
+                ? setCount2(++count2)
+                : alert("Can't add more Students");
+            }}
+          >
             Add
           </Button>
-          <Button size="small" className={classes.red} onClick={removeStudent}>
+          <Button
+            size="small"
+            className={classes.red}
+            onClick={() => {
+              count2 > 3
+                ? setCount2(--count2)
+                : alert("Can't remove more Students");
+            }}
+          >
             Remove
           </Button>
         </CardActions>
@@ -160,14 +194,30 @@ const MentorView = () => {
             Students Count:
           </Typography>
           <Typography variant="body2" component="p">
-            4
+            {count3}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" className={classes.green} onClick={addStudent}>
+          <Button
+            size="small"
+            className={classes.green}
+            onClick={() => {
+              count3 < 4
+                ? setCount3(++count3)
+                : alert("Can't add more Students");
+            }}
+          >
             Add
           </Button>
-          <Button size="small" className={classes.red} onClick={removeStudent}>
+          <Button
+            size="small"
+            className={classes.red}
+            onClick={() => {
+              count3 > 3
+                ? setCount3(--count3)
+                : alert("Can't remove more Students");
+            }}
+          >
             Remove
           </Button>
         </CardActions>
@@ -189,14 +239,30 @@ const MentorView = () => {
             Students Count:
           </Typography>
           <Typography variant="body2" component="p">
-            3
+            {count4}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" className={classes.green} onClick={addStudent}>
+          <Button
+            size="small"
+            className={classes.green}
+            onClick={() => {
+              count4 < 4
+                ? setCount4(++count4)
+                : alert("Can't add more Students");
+            }}
+          >
             Add
           </Button>
-          <Button size="small" className={classes.red} onClick={removeStudent}>
+          <Button
+            size="small"
+            className={classes.red}
+            onClick={() => {
+              count4 > 3
+                ? setCount4(--count4)
+                : alert("Can't remove more Students");
+            }}
+          >
             Remove
           </Button>
         </CardActions>
@@ -218,14 +284,30 @@ const MentorView = () => {
             Students Count:
           </Typography>
           <Typography variant="body2" component="p">
-            3
+            {count5}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" className={classes.green} onClick={addStudent}>
+          <Button
+            size="small"
+            className={classes.green}
+            onClick={() => {
+              count5 < 4
+                ? setCount5(++count5)
+                : alert("Can't add more Students");
+            }}
+          >
             Add
           </Button>
-          <Button size="small" className={classes.red} onClick={removeStudent}>
+          <Button
+            size="small"
+            className={classes.red}
+            onClick={() => {
+              count5 > 3
+                ? setCount5(--count5)
+                : alert("Can't remove more Students");
+            }}
+          >
             Remove
           </Button>
         </CardActions>
@@ -247,14 +329,30 @@ const MentorView = () => {
             Students Count:
           </Typography>
           <Typography variant="body2" component="p">
-            3
+            {count6}
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" className={classes.green} onClick={addStudent}>
+          <Button
+            size="small"
+            className={classes.green}
+            onClick={() => {
+              count6 < 4
+                ? setCount6(++count6)
+                : alert("Can't add more Students");
+            }}
+          >
             Add
           </Button>
-          <Button size="small" className={classes.red} onClick={removeStudent}>
+          <Button
+            size="small"
+            className={classes.red}
+            onClick={() => {
+              count6 > 3
+                ? setCount6(--count6)
+                : alert("Can't remove more Students");
+            }}
+          >
             Remove
           </Button>
         </CardActions>
